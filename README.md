@@ -9,9 +9,7 @@
     · > [!NOTE] / > [!TIP]   -> hộp ghi chú có màu (giống .note trong preview)
     · bảng markdown          -> GitHub tự kẻ viền, nền sọc
     · ảnh SVG/GIF trong repo -> giữ nguyên màu xanh nhạt, không phụ thuộc dịch vụ ngoài
-  Sửa các chỗ <!-- EDIT --> trước khi commit.
-  ============================================================
--->
+  Sửa các chỗ <!-- EDIT --> trước khi commit. ============================================================-->
 
 <div align="center">
 
