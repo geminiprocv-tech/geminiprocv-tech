@@ -2,8 +2,7 @@
   PROFILE README — dán vào repo: geminiprocv-tech/geminiprocv-tech (repo PUBLIC, tên trùng username)
   Banner: mặc định dùng assets/banner.svg (nền tối, xanh nhạt làm điểm nhấn — hiển thị tốt ở cả dark & light mode)
           muốn nền sáng hoàn toàn thì đổi thành assets/banner-lite.svg
-  Chỗ nào có <!-- EDIT --> là phải sửa theo dữ liệu thật.
--->
+  Chỗ nào có <!-- EDIT --> là phải sửa theo dữ liệu thật.-->
 
 <p align="center">
   <img src="assets/banner.svg" alt="geminiprocv-tech — Embedded Systems, IoT, Edge AI" width="100%"/>
