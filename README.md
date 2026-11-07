@@ -1,142 +1,164 @@
 <!--
-  PROFILE README — dán vào repo: geminiprocv-tech/geminiprocv-tech (repo PUBLIC, tên trùng username)
-  Banner: mặc định dùng assets/banner.svg (nền tối, xanh nhạt làm điểm nhấn — hiển thị tốt ở cả dark & light mode)
-          muốn nền sáng hoàn toàn thì đổi thành assets/banner-lite.svg
-  Chỗ nào có <!-- EDIT --> là phải sửa theo dữ liệu thật.
+  ============================================================
+  README GITHUB — bản tối ưu cho GitHub RENDER (giống preview-final.html nhất có thể)
+  Dán file này vào README.md của repo geminiprocv-tech/geminiprocv-tech
+
+  Vì sao phải có bản này: GitHub xoá <style> và chặn CSS trong README,
+  nên mọi thứ phải làm bằng thứ GitHub hỗ trợ:
+    · <div align="center">   -> căn giữa
+    · > [!NOTE] / > [!TIP]   -> hộp ghi chú có màu (giống .note trong preview)
+    · bảng markdown          -> GitHub tự kẻ viền, nền sọc
+    · ảnh SVG/GIF trong repo -> giữ nguyên màu xanh nhạt, không phụ thuộc dịch vụ ngoài
+  Sửa các chỗ <!-- EDIT --> trước khi commit.
+  ============================================================
 -->
 
-<p align="center">
-  <img src="assets/banner.svg" alt="geminiprocv-tech — Embedded Systems, IoT, Edge AI" width="100%"/>
-</p>
+<div align="center">
 
-```console
-geminiprocv@edge-node:~$ ./boot.sh
-[    0.000] Booting geminiprocv-tech v1.0 ...................... OK
-[    0.214] Mounting /skills ....................... 8 modules
-[    0.402] Probing I2C bus 0 ......................... 3 devices found
-[    0.611] Calibrating sensors ......................... stable
-[    0.800] Loading model (int8, on-device) ............. 24 fps
-[    1.000] Target profile: EMBEDDED · IoT · EDGE AI
-[    1.002] Status: online — building, learning, shipping
+<a href="https://github.com/geminiprocv-tech">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=3200&pause=1000&color=8FD6FF&center=true&vCenter=true&width=700&lines=2nd-year+Computer+Engineering+%7C+Da+Nang;Learning+firmware+from+the+bottom+up;C%2B%2B+%7C+Java+%7C+Web+%7C+SQL;Target%3A+embedded+internship%2C+2028" alt="2nd-year Computer Engineering | Da Nang" />
+</a>
+
+**I am early. That is the point — I am telling you where I am, not where I pretend to be.**
+
+<a href="mailto:YOUR@EMAIL.COM"><img src="https://img.shields.io/badge/Email-0b2130?style=for-the-badge&logo=gmail&logoColor=8fd6ff" alt="Email"/></a>
+<a href="https://www.linkedin.com/in/YOUR-HANDLE"><img src="https://img.shields.io/badge/LinkedIn-0b2130?style=for-the-badge&logo=linkedin&logoColor=8fd6ff" alt="LinkedIn"/></a>
+<a href="cv.pdf"><img src="https://img.shields.io/badge/CV-0b2130?style=for-the-badge&logo=adobeacrobatreader&logoColor=8fd6ff" alt="CV"/></a>
+<a href="https://github.com/geminiprocv-tech"><img src="https://img.shields.io/badge/GitHub-0b2130?style=for-the-badge&logo=github&logoColor=8fd6ff" alt="GitHub"/></a>
+
+<img src="assets/crew-walk.gif" alt="Three AI mascots walking side by side, back and forth" width="100%"/>
+
+</div>
+
+---
+
+## 🎯 About Me
+
+```c
+typedef struct {
+    const char *name;
+    const char *role;
+    const char *location;
+
+    uint8_t  year            : 3;   /* 2  — second year, semester 1       */
+    uint8_t  credits_done    : 7;   /* 39 graded credits so far           */
+    uint8_t  gpa_x10         : 6;   /* 35 -> 3.56 / 4.0                   */
+    uint8_t  fw_projects     : 4;   /* 0  — honest. First node: Q2 2027   */
+    uint8_t  open_to         : 1;   /* 1  — embedded internship, 2028     */
+
+    const char *strengths[3];
+} student_t;
+
+static const student_t me = {
+    .name      = "geminiprocv-tech",
+    .role      = "Computer Engineering student, learning embedded firmware",
+    .location  = "Da Nang, Vietnam (GMT+7)",
+    .strengths = {
+        "Object-oriented programming — strongest subject, grade A",
+        "Reading English datasheets and documentation without help",
+        "Finishing what I start: 56% of my graded courses are A",
+    },
+};
 ```
 
-<h3 align="center">I build small machines that sense the world, think locally, and talk over the wire.</h3>
+> [!NOTE]
+> `fw_projects = 0` là **cố ý**. Nó trung thực và nó đặt kỳ vọng đúng chỗ — người đọc xong sẽ thấy tôi tỉnh, không phải thấy tôi yếu.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/FOCUS-firmware%20%C2%B7%20edge%20ai%20%C2%B7%20iot%20infra-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="focus"/>
-  <img src="https://img.shields.io/badge/BASE-da%20nang%2C%20vn-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="location"/>
-  <img src="https://img.shields.io/badge/OPEN%20TO-internship-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="open to"/>
-</p>
+## 📡 Now
 
-<p align="center">
-  <img src="assets/divider.svg" alt="" width="100%"/>
-</p>
+<!-- NOW:START -->
+<!-- NOW:END -->
 
-## 🛰 Device status
+> [!TIP]
+> Khối trên **do máy ghi** — sửa `now.json`, GitHub Actions tự cập nhật. Đây là chỗ duy nhất trên profile chứng minh tôi còn đang chạy, không phải ảnh chụp từ năm ngoái.
+>
+> Kế hoạch 90 ngày đầy đủ, gồm 3 checkpoint và danh sách thứ **cố tình không học**: **[NOW.md](NOW.md)**
 
-| FIELD | VALUE |
+## 📍 Where I am right now
+
+- **Second-year Computer Engineering student in Da Nang**, semester 1. 39 graded credits, GPA **3.56/4.0**.
+- **Comfortable with:** OOP and Java, web basics, SQL, Git. These are the courses where I got A, and where I can already build something small end-to-end.
+- **Working through the hard part now:** C pointers and manual memory, then registers and peripherals on a real board. Not there yet, and not pretending otherwise.
+- **No firmware project on this profile yet.** I would rather leave this empty than fill it with a LED-blink repo and call it experience.
+
+## 🗺️ What I am working toward
+
+| When | What | Why it matters |
+|---|---|---|
+| **Now → 06/2027** | C from the bottom: pointers, memory, bit manipulation. Then a first STM32 board: GPIO, UART, one I²C sensor. | Without C at this level, every embedded interview stops at question one. |
+| **2027** | FreeRTOS tasks and queues, MQTT uplink, a sensor node that runs on battery and logs its own current draw. | The first project I will be able to put a *measured* number on. |
+| **2027–2028** | Enter **IoT Challenge** and **VEDC** as a team member — both in Da Nang. | Competition deadlines are the only thing that reliably forces a project to finish. |
+| **2028** | **Embedded firmware internship** — Hitachi Digital Services Da Nang is the target (GPA bar 3.0; mine is 3.56). | This profile exists so that when I apply, there is something to read. |
+| **Capstone** | One system, four layers: firmware → edge model → backend → CI/CD. Not four separate demos. | One deep project beats five shallow ones. |
+
+## 🛠️ Tech Stack
+
+**✅ Comfortable — I have built something with these**
+
+![Java](https://img.shields.io/badge/Java-1c7fb0?style=flat-square&logo=openjdk&logoColor=white)
+![C](https://img.shields.io/badge/C-1c7fb0?style=flat-square&logo=c&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-1c7fb0?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1c7fb0?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-1c7fb0?style=flat-square&logo=javascript&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-1c7fb0?style=flat-square&logo=postgresql&logoColor=white)
+![Git](https://img.shields.io/badge/Git-1c7fb0?style=flat-square&logo=git&logoColor=white)
+
+**📖 Learning right now — coursework or self-study, no project yet**
+
+![C++](https://img.shields.io/badge/C%2B%2B-1c7fb0?style=flat-square&logo=cplusplus&logoColor=white)
+![Python](https://img.shields.io/badge/Python-1c7fb0?style=flat-square&logo=python&logoColor=white)
+![STM32](https://img.shields.io/badge/STM32-1c7fb0?style=flat-square&logo=stmicroelectronics&logoColor=white)
+![Arduino](https://img.shields.io/badge/Arduino-1c7fb0?style=flat-square&logo=arduino&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-1c7fb0?style=flat-square&logo=linux&logoColor=white)
+
+**🗺️ Planned, with a date attached — not claimed yet**
+
+![FreeRTOS](https://img.shields.io/badge/FreeRTOS_(2027)-1c7fb0?style=flat-square&logo=freertos&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32_(2027)-1c7fb0?style=flat-square&logo=espressif&logoColor=white)
+![MQTT](https://img.shields.io/badge/MQTT_(2027)-1c7fb0?style=flat-square&logo=mqtt&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker_(2028)-1c7fb0?style=flat-square&logo=docker&logoColor=white)
+
+## 🧭 How I work
+
+Ba con AI cãi nhau với tôi mỗi ngày — Claude, ChatGPT, Gemini. Chúng đưa ra lựa chọn; **commit, bài test và con số đo được là của tôi.** Đây là 5 luật tôi giữ để điều đó đúng:
+
+| Rule | What it looks like in practice |
 |---|---|
-| `DEVICE_ID` | **geminiprocv-tech** |
-| `ROLE` | Computer Engineering student |
-| `LOCATION` | Hoi An / Da Nang, Vietnam |
-| `PRIMARY_BUS` | Embedded firmware · IoT systems · Edge AI |
-| `CURRENT_MISSION` | Building an end-to-end sensor → edge AI → cloud system |
-| `UPTIME` | learning since 2024 <!-- EDIT --> |
-| `STATUS` | 🟢 online — open to internship & junior roles |
+| **Datasheet before search** | Reference manual first, forum second. Nếu không tìm thấy trong tài liệu, bản thân điều đó cũng là thông tin |
+| **Type it, don't paste it** | Mọi driver tôi gõ tay, rồi **cố tình làm hỏng**, rồi sửa. Copy-paste giấu đúng phần tôi cần hiểu |
+| **Measure before believing** | µA đến từ đồng hồ vạn năng, không đến từ một dòng trong datasheet nói "typical" |
+| **One commit a week, with what broke in the message** | `w04: ring buffer lost a byte past 128 — off-by-one in head wrap` |
+| **Definition of done before starting** | Nếu tôi không nói được "xong nghĩa là gì", tôi chưa bắt đầu |
 
-## ⚡ Bus topology — what I work with
+Cách tôi dùng AI: nhờ nó giải thích một đoạn errata, hỏi ngược "tại sao cách này sai", sinh bài test cho hàm ring buffer. Không nhờ nó viết xong project hộ. **Thứ tôi nộp là thứ tôi giải thích được.**
 
-**MCU / boards**
-<br/>
-<img src="https://img.shields.io/badge/STM32-8fd6ff?style=flat-square&labelColor=0b2130" alt="stm32"/>
-<img src="https://img.shields.io/badge/ESP32-8fd6ff?style=flat-square&labelColor=0b2130" alt="esp32"/>
-<img src="https://img.shields.io/badge/Raspberry%20Pi-8fd6ff?style=flat-square&labelColor=0b2130" alt="raspberry pi"/>
-<img src="https://img.shields.io/badge/Jetson%20Nano-8fd6ff?style=flat-square&labelColor=0b2130" alt="jetson"/>
-<img src="https://img.shields.io/badge/FPGA-8fd6ff?style=flat-square&labelColor=0b2130" alt="fpga"/>
+## 🎯 2027 Goals
 
-**Languages**
-<br/>
-<img src="https://img.shields.io/badge/C-8fd6ff?style=flat-square&labelColor=0b2130" alt="c"/>
-<img src="https://img.shields.io/badge/C%2B%2B-8fd6ff?style=flat-square&labelColor=0b2130" alt="cpp"/>
-<img src="https://img.shields.io/badge/Python-8fd6ff?style=flat-square&labelColor=0b2130" alt="python"/>
-<img src="https://img.shields.io/badge/Java-8fd6ff?style=flat-square&labelColor=0b2130" alt="java"/>
-<img src="https://img.shields.io/badge/Bash-8fd6ff?style=flat-square&labelColor=0b2130" alt="bash"/>
-<img src="https://img.shields.io/badge/SystemVerilog-8fd6ff?style=flat-square&labelColor=0b2130" alt="sv"/>
+- 🧱 Write C until pointers and manual memory stop being scary — then write a driver without a HAL
+- 🔌 Get **one** sensor node running on a battery, and publish how many µA it draws
+- 🏆 Join a team for **IoT Challenge** or **VECD** — both hosted in Da Nang
+- 📚 Turn the two B's I am unhappy with into things I can actually use (DSA, circuits)
+- ✍️ One write-up per project, including the part that did not work
 
-**Protocols**
-<br/>
-<img src="https://img.shields.io/badge/I2C-8fd6ff?style=flat-square&labelColor=0b2130" alt="i2c"/>
-<img src="https://img.shields.io/badge/SPI-8fd6ff?style=flat-square&labelColor=0b2130" alt="spi"/>
-<img src="https://img.shields.io/badge/UART-8fd6ff?style=flat-square&labelColor=0b2130" alt="uart"/>
-<img src="https://img.shields.io/badge/MQTT-8fd6ff?style=flat-square&labelColor=0b2130" alt="mqtt"/>
-<img src="https://img.shields.io/badge/BLE-8fd6ff?style=flat-square&labelColor=0b2130" alt="ble"/>
-<img src="https://img.shields.io/badge/CAN-8fd6ff?style=flat-square&labelColor=0b2130" alt="can"/>
+## 🤝 What I can offer a team right now
 
-**Infra & tools**
-<br/>
-<img src="https://img.shields.io/badge/Linux-8fd6ff?style=flat-square&labelColor=0b2130" alt="linux"/>
-<img src="https://img.shields.io/badge/Docker-8fd6ff?style=flat-square&labelColor=0b2130" alt="docker"/>
-<img src="https://img.shields.io/badge/GitHub%20Actions-8fd6ff?style=flat-square&labelColor=0b2130" alt="actions"/>
-<img src="https://img.shields.io/badge/PostgreSQL-8fd6ff?style=flat-square&labelColor=0b2130" alt="postgres"/>
-<img src="https://img.shields.io/badge/PyTorch-8fd6ff?style=flat-square&labelColor=0b2130" alt="pytorch"/>
-<img src="https://img.shields.io/badge/OpenCV-8fd6ff?style=flat-square&labelColor=0b2130" alt="opencv"/>
-<img src="https://img.shields.io/badge/Git-8fd6ff?style=flat-square&labelColor=0b2130" alt="git"/>
+I am not going to claim experience I do not have. What I do have, today:
 
-<p align="center">
-  <img src="assets/divider.svg" alt="" width="100%"/>
-</p>
+- **A foundation that will not need re-teaching** — OOP, data basics, and web, at A level
+- **English good enough to read a datasheet, an errata sheet, and a GitHub issue** without a translation tool
+- **A record of finishing** — 56% A across 39 credits, in a curriculum that is not easy
+- **Honest reporting** — this profile says "0 firmware projects" out loud. I would rather be corrected than caught
 
-## 📡 Active nodes — projects
+<div align="center">
 
-> Mỗi dòng = một thiết bị trong mạng. Thay bằng dự án thật (xóa dòng mẫu khi đã có).
-> **Quy tắc kể:** nêu *số đo được* — dòng điện sleep, FPS, độ trễ, kích thước model, uptime.
+📫 **[YOUR@EMAIL.COM](mailto:YOUR@EMAIL.COM)** · 🌐 **[LinkedIn](https://www.linkedin.com/in/YOUR-HANDLE)**
 
-| NODE | STACK | TELEMETRY | STATUS |
-|---|---|:--:|:--:|
-| [**sensor-node**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `C` `STM32` `I2C` `MQTT` | sleep **42 µA**, battery **9 days** | 🟢 done |
-| [**edge-vision**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Python` `YOLOv8n` `TensorRT` | **24 FPS** after INT8, model **6.1 MB** | 🟡 wip |
-| [**iot-dashboard**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Java` `Spring` `PostgreSQL` | p95 **85 ms**, **1.2 M** rows/day | 🟡 wip |
-| [**node-infra**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Docker` `CI/CD` `Prometheus` | deploy **1 command**, pipeline **92 s** | 🔵 planned |
-
-<p align="center">
-  <img src="assets/divider.svg" alt="" width="100%"/>
-</p>
-
-## 📈 Telemetry
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=geminiprocv-tech&show_icons=true&hide_border=true&bg_color=0b2130&title_color=8fd6ff&text_color=a8c6d4&icon_color=8fd6ff&include_all_commits=true&count_private=true" alt="GitHub stats"/>
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=geminiprocv-tech&layout=compact&hide_border=true&bg_color=0b2130&title_color=8fd6ff&text_color=a8c6d4&langs_count=8" alt="Top languages"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=geminiprocv-tech&bg_color=0b2130&color=8fd6ff&line=4fb8e8&point=cdeeff&area=true&hide_border=true" alt="activity graph" width="100%"/>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/geminiprocv-tech/geminiprocv-tech/output/github-snake-dark.svg" alt="contribution snake" width="100%"/>
-</p>
-
-<p align="center">
-  <img src="assets/divider.svg" alt="" width="100%"/>
-</p>
-
-## 🔌 Pinout — get in touch
-
-| PIN | SIGNAL |
-|:--:|---|
-| `TX` | [![LinkedIn](https://img.shields.io/badge/LinkedIn-8fd6ff?style=flat-square&labelColor=0b2130)](https://www.linkedin.com/in/YOUR-HANDLE) <!-- EDIT --> |
-| `RX` | [![Email](https://img.shields.io/badge/Email-8fd6ff?style=flat-square&labelColor=0b2130)](mailto:YOUR@EMAIL.COM) <!-- EDIT --> |
-| `GND` | Da Nang, Vietnam (GMT+7) |
-| `3V3` | Open to **internship** & **junior embedded / edge AI** roles |
+<sub>Da Nang, Vietnam (GMT+7) · open to embedded internship from 2028</sub>
 
 <br/>
 
-<p align="center">
-  <i>"If it doesn't have a debug LED and a log line, it doesn't exist."</i>
-</p>
+<img src="assets/divider.svg" alt="" width="100%"/>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=geminiprocv-tech&label=node%20visits&color=8fd6ff&style=flat-square" alt="profile views"/>
-</p>
+<i>"Say where you are. Then move."</i>
 
+</div>
