@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 40" width="1200" height="40" role="img" aria-label="circuit divider">
+  <g stroke="#1e6f8f" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M0 20 H520 L540 6 H660 L680 20 H1200"/>
+  </g>
+  <g fill="#8fd6ff">
+    <circle cx="540" cy="6" r="3"/>
+    <circle cx="660" cy="6" r="3"/>
+  </g>
+  <rect x="584" y="13" width="34" height="14" rx="2" fill="#0b2130" stroke="#2f8fb8" stroke-width="1.4"/>
+  <text x="601" y="24" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="8" letter-spacing="1" fill="#8fd6ff">BUS</text>
+</svg>
