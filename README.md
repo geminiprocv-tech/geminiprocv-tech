@@ -1,15 +1,3 @@
-<!--
-  ============================================================
-  README GITHUB — bản tối ưu cho GitHub RENDER (giống preview-final.html nhất có thể)
-  Dán file này vào README.md của repo geminiprocv-tech/geminiprocv-tech
-
-  Vì sao phải có bản này: GitHub xoá <style> và chặn CSS trong README,
-  nên mọi thứ phải làm bằng thứ GitHub hỗ trợ:
-    · <div align="center">   -> căn giữa
-    · > [!NOTE] / > [!TIP]   -> hộp ghi chú có màu (giống .note trong preview)
-    · bảng markdown          -> GitHub tự kẻ viền, nền sọc
-    · ảnh SVG/GIF trong repo -> giữ nguyên màu xanh nhạt, không phụ thuộc dịch vụ ngoài
-  Sửa các chỗ <!-- EDIT --> trước khi commit. ============================================================-->
 
 <div align="center">
 
