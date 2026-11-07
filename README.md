@@ -1,134 +1,102 @@
-<p align="center">
-  <img src="assets/banner.svg" alt="geminiprocv-tech — Embedded Systems, IoT, Edge AI" width="100%"/>
-</p>
+<!--
+  ============================================================
+  PROFILE README v2 — BẢN CHUYÊN NGHIỆP (khuyên dùng)
+  Dán vào repo: geminiprocv-tech/geminiprocv-tech (Public, tên trùng username)
+  Upload kèm thư mục assets/ (banner.svg + divider.svg)
 
-```console
-geminiprocv@edge-node:~$ ./boot.sh
-[    0.000] Booting geminiprocv-tech v1.0 ...................... OK
-[    0.214] Mounting /skills ....................... 8 modules
-[    0.402] Probing I2C bus 0 ......................... 3 devices found
-[    0.611] Calibrating sensors ......................... stable
-[    0.800] Loading model (int8, on-device) ............. 24 fps
-[    1.000] Target profile: EMBEDDED · IoT · EDGE AI
-[    1.002] Status: online — building, learning, shipping
-```
-
-<h3 align="center">I build small machines that sense the world, think locally, and talk over the wire.</h3>
+  Khác bản v1: bỏ badge wall, bỏ snake, bỏ 3 stats card, bỏ emoji heading.
+  Mỗi chỗ <!-- EDIT --> là phải sửa theo dữ liệu thật.
+  Nguyên tắc: 1 màn hình, 1 stats widget, 4 repo pin.
+  ============================================================
+-->
 
 <p align="center">
-  <img src="https://img.shields.io/badge/FOCUS-firmware%20%C2%B7%20edge%20ai%20%C2%B7%20iot%20infra-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="focus"/>
-  <img src="https://img.shields.io/badge/BASE-da%20nang%2C%20vn-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="location"/>
-  <img src="https://img.shields.io/badge/OPEN%20TO-internship-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="open to"/>
+  <img src="assets/banner.svg" alt="geminiprocv-tech — Embedded Systems · IoT · Edge AI" width="100%"/>
 </p>
+
+**Computer Engineering student building low-power sensor nodes and on-device inference.**
+I work from firmware up: hand-written drivers, RTOS task sets, quantized models, and the
+infrastructure that keeps the whole thing observable. Looking for an **embedded / edge-AI internship**
+in Da Nang or remote.
+
+### Now
+
+- Building **sensor-node** — bare-metal STM32 with FreeRTOS, MQTT uplink, 42 µA sleep current.
+- Learning FreeRTOS internals and INT8 quantization on Jetson.
+- Next milestone: end-to-end system (node → on-device model → cloud dashboard).
+
+<!-- EDIT: cập nhật 3 gạch đầu dòng này mỗi 2–4 tuần. Đây là phần duy nhất cho thấy profile còn sống. -->
+
+### Selected work
+
+**sensor-node** — Battery-powered sensor node for indoor climate monitoring.
+Bare-metal STM32 with a hand-written I2C driver (no HAL), FreeRTOS task set, MQTT uplink,
+flash buffer that survives network loss. Runs 9 days on a single 18650 at 42 µA sleep.
+`C` · `FreeRTOS` · `STM32` · `MQTT` → [repo](https://github.com/geminiprocv-tech) <!-- EDIT -->
+
+**edge-vision** — On-device people counting for a fixed power budget.
+INT8-quantized YOLOv8n on Jetson Nano: 24 FPS (from 9), 6.1 MB model, 1.2% mAP cost.
+The interesting part was not accuracy — it was the size/latency trade-off.
+`Python` · `PyTorch` · `TensorRT` · `OpenCV` → [repo](https://github.com/geminiprocv-tech) <!-- EDIT -->
+
+**iot-dashboard** — API and dashboard for a small device fleet.
+14 endpoints, time-series ingestion at 1.2 M rows/day, p95 85 ms. Built to keep reads cheap
+while writes grow.
+`Java` · `Spring Boot` · `PostgreSQL` → [repo](https://github.com/geminiprocv-tech) <!-- EDIT -->
+
+<!-- EDIT: nếu chưa có project 3–4 thì XOÁ dòng đó. 3 dòng thật > 5 dòng mẫu. -->
+
+### Numbers I can defend
+
+| Metric | Value | How it was measured |
+|---|:--:|---|
+| Sleep current | **42 µA** | multimeter in series, STM32 stop mode |
+| Battery life | **9 days** | 18650 3000 mAh ÷ average draw |
+| On-device throughput | **24 FPS** | INT8 TensorRT, Jetson Nano, 640×640 |
+| API latency (p95) | **85 ms** | load test, 12 devices, 7-day window |
+
+> Nhà tuyển dụng nhúng **sẽ hỏi** "đo bằng gì". Bảng này là để bạn trả lời được ngay — và cũng là
+> lý do đừng điền số khi chưa đo.
+
+### Stack
+
+**Firmware:** C, C++, bare-metal, FreeRTOS, STM32, ESP32, I²C / SPI / UART / CAN
+**Device AI:** PyTorch, OpenCV, TensorRT, ONNX, INT8 quantization
+**Backend:** Java, Spring Boot, PostgreSQL, REST, MQTT
+**Infra:** Linux, Docker, GitHub Actions, Prometheus, Git
+
+<!-- Không dùng badge wall. 4 dòng text này đọc nhanh hơn 25 cái badge và không bị coi là filler. -->
+
+### Reach
+
+[Email](mailto:YOUR@EMAIL.COM) · [LinkedIn](https://www.linkedin.com/in/YOUR-HANDLE) · [CV](cv.pdf) <!-- EDIT -->
+
+<br/>
+
+<sub>Da Nang, Vietnam (GMT+7) · open to internship from 2027</sub>
+<!-- EDIT -->
 
 <p align="center">
   <img src="assets/divider.svg" alt="" width="100%"/>
 </p>
 
-## 🛰 Device status
+<!--
+  TUỲ CHỌN — ĐÚNG MỘT stats widget. Bỏ comment nếu muốn. Đừng thêm cái thứ hai.
+  <p align="center">
+    <img height="150" src="https://github-readme-stats.vercel.app/api?username=geminiprocv-tech&show_icons=true&hide_border=true&hide_title=true&bg_color=0b2130&title_color=8fd6ff&text_color=a8c6d4&icon_color=8fd6ff" alt="GitHub stats"/>
+  </p>
+-->
 
-| FIELD | VALUE |
-|---|---|
-| `DEVICE_ID` | **geminiprocv-tech** |
-| `ROLE` | Computer Engineering student |
-| `LOCATION` | Hoi An / Da Nang, Vietnam |
-| `PRIMARY_BUS` | Embedded firmware · IoT systems · Edge AI |
-| `CURRENT_MISSION` | Building an end-to-end sensor → edge AI → cloud system |
-| `UPTIME` | learning since 2024 <!-- EDIT --> |
-| `STATUS` | 🟢 online — open to internship & junior roles |
+<!--
+  TUỲ CHỌN — nếu bạn vẫn thích motif terminal, cho vào <details> để không chiếm màn hình.
+  <details>
+    <summary>boot log</summary>
 
-## ⚡ Bus topology — what I work with
+  ```console
+  [ 0.000] probing I2C bus 0 ......... 3 devices
+  [ 1.000] profile: EMBEDDED · IoT · EDGE AI
+  [ 1.002] status: online
+  ```
 
-**MCU / boards**
-<br/>
-<img src="https://img.shields.io/badge/STM32-8fd6ff?style=flat-square&labelColor=0b2130" alt="stm32"/>
-<img src="https://img.shields.io/badge/ESP32-8fd6ff?style=flat-square&labelColor=0b2130" alt="esp32"/>
-<img src="https://img.shields.io/badge/Raspberry%20Pi-8fd6ff?style=flat-square&labelColor=0b2130" alt="raspberry pi"/>
-<img src="https://img.shields.io/badge/Jetson%20Nano-8fd6ff?style=flat-square&labelColor=0b2130" alt="jetson"/>
-<img src="https://img.shields.io/badge/FPGA-8fd6ff?style=flat-square&labelColor=0b2130" alt="fpga"/>
-
-**Languages**
-<br/>
-<img src="https://img.shields.io/badge/C-8fd6ff?style=flat-square&labelColor=0b2130" alt="c"/>
-<img src="https://img.shields.io/badge/C%2B%2B-8fd6ff?style=flat-square&labelColor=0b2130" alt="cpp"/>
-<img src="https://img.shields.io/badge/Python-8fd6ff?style=flat-square&labelColor=0b2130" alt="python"/>
-<img src="https://img.shields.io/badge/Java-8fd6ff?style=flat-square&labelColor=0b2130" alt="java"/>
-<img src="https://img.shields.io/badge/Bash-8fd6ff?style=flat-square&labelColor=0b2130" alt="bash"/>
-<img src="https://img.shields.io/badge/SystemVerilog-8fd6ff?style=flat-square&labelColor=0b2130" alt="sv"/>
-
-**Protocols**
-<br/>
-<img src="https://img.shields.io/badge/I2C-8fd6ff?style=flat-square&labelColor=0b2130" alt="i2c"/>
-<img src="https://img.shields.io/badge/SPI-8fd6ff?style=flat-square&labelColor=0b2130" alt="spi"/>
-<img src="https://img.shields.io/badge/UART-8fd6ff?style=flat-square&labelColor=0b2130" alt="uart"/>
-<img src="https://img.shields.io/badge/MQTT-8fd6ff?style=flat-square&labelColor=0b2130" alt="mqtt"/>
-<img src="https://img.shields.io/badge/BLE-8fd6ff?style=flat-square&labelColor=0b2130" alt="ble"/>
-<img src="https://img.shields.io/badge/CAN-8fd6ff?style=flat-square&labelColor=0b2130" alt="can"/>
-
-**Infra & tools**
-<br/>
-<img src="https://img.shields.io/badge/Linux-8fd6ff?style=flat-square&labelColor=0b2130" alt="linux"/>
-<img src="https://img.shields.io/badge/Docker-8fd6ff?style=flat-square&labelColor=0b2130" alt="docker"/>
-<img src="https://img.shields.io/badge/GitHub%20Actions-8fd6ff?style=flat-square&labelColor=0b2130" alt="actions"/>
-<img src="https://img.shields.io/badge/PostgreSQL-8fd6ff?style=flat-square&labelColor=0b2130" alt="postgres"/>
-<img src="https://img.shields.io/badge/PyTorch-8fd6ff?style=flat-square&labelColor=0b2130" alt="pytorch"/>
-<img src="https://img.shields.io/badge/OpenCV-8fd6ff?style=flat-square&labelColor=0b2130" alt="opencv"/>
-<img src="https://img.shields.io/badge/Git-8fd6ff?style=flat-square&labelColor=0b2130" alt="git"/>
-
-<p align="center">
-  <img src="assets/divider.svg" alt="" width="100%"/>
-</p>
-
-## 📡 Active nodes — projects
-
-> Mỗi dòng = một thiết bị trong mạng. Thay bằng dự án thật (xóa dòng mẫu khi đã có).
-> **Quy tắc kể:** nêu *số đo được* — dòng điện sleep, FPS, độ trễ, kích thước model, uptime.
-
-| NODE | STACK | TELEMETRY | STATUS |
-|---|---|:--:|:--:|
-| [**sensor-node**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `C` `STM32` `I2C` `MQTT` | sleep **42 µA**, battery **9 days** | 🟢 done |
-| [**edge-vision**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Python` `YOLOv8n` `TensorRT` | **24 FPS** after INT8, model **6.1 MB** | 🟡 wip |
-| [**iot-dashboard**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Java` `Spring` `PostgreSQL` | p95 **85 ms**, **1.2 M** rows/day | 🟡 wip |
-| [**node-infra**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Docker` `CI/CD` `Prometheus` | deploy **1 command**, pipeline **92 s** | 🔵 planned |
-
-<p align="center">
-  <img src="assets/divider.svg" alt="" width="100%"/>
-</p>
-
-## 📈 Telemetry
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=geminiprocv-tech&show_icons=true&hide_border=true&bg_color=0b2130&title_color=8fd6ff&text_color=a8c6d4&icon_color=8fd6ff&include_all_commits=true&count_private=true" alt="GitHub stats"/>
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=geminiprocv-tech&layout=compact&hide_border=true&bg_color=0b2130&title_color=8fd6ff&text_color=a8c6d4&langs_count=8" alt="Top languages"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=geminiprocv-tech&bg_color=0b2130&color=8fd6ff&line=4fb8e8&point=cdeeff&area=true&hide_border=true" alt="activity graph" width="100%"/>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/geminiprocv-tech/geminiprocv-tech/output/github-snake-dark.svg" alt="contribution snake" width="100%"/>
-</p>
-
-<p align="center">
-  <img src="assets/divider.svg" alt="" width="100%"/>
-</p>
-
-## 🔌 Pinout — get in touch
-
-| PIN | SIGNAL |
-|:--:|---|
-| `TX` | [![LinkedIn](https://img.shields.io/badge/LinkedIn-8fd6ff?style=flat-square&labelColor=0b2130)](https://www.linkedin.com/in/YOUR-HANDLE) <!-- EDIT --> |
-| `RX` | [![Email](https://img.shields.io/badge/Email-8fd6ff?style=flat-square&labelColor=0b2130)](mailto:YOUR@EMAIL.COM) <!-- EDIT --> |
-| `GND` | Da Nang, Vietnam (GMT+7) |
-| `3V3` | Open to **internship** & **junior embedded / edge AI** roles |
-
-<br/>
-
-<p align="center">
-  <i>"If it doesn't have a debug LED and a log line, it doesn't exist."</i>
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=geminiprocv-tech&label=node%20visits&color=8fd6ff&style=flat-square" alt="profile views"/>
-</p>
+  </details>
+-->
