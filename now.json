@@ -1,0 +1,39 @@
+{
+  "_comment": "Nguồn sự thật duy nhất cho phần NOW của README. Sửa file này, Action sẽ tự cập nhật README. Đừng sửa trực tiếp trong README.",
+  "updated": "2026-11-07",
+  "semester": "Year 2 · Semester 1",
+  "sprint": {
+    "name": "C — pointers & memory",
+    "window": "2026-11 → 2027-02",
+    "week": 1,
+    "of": 13,
+    "exit_criteria": [
+      "write a driver without a HAL",
+      "explain what `volatile` actually does"
+    ]
+  },
+  "metrics": {
+    "gpa": 3.56,
+    "credits": 39,
+    "a_count": 22,
+    "b_count": 17,
+    "fw_projects": 0
+  },
+  "next": [
+    {
+      "label": "first STM32 sensor node",
+      "when": "Q2 2027",
+      "detail": "publish the measured µA draw, not just a photo"
+    },
+    {
+      "label": "IoT Challenge / VEDC entry",
+      "when": "2027",
+      "detail": "both hosted in Da Nang, both accept student teams"
+    },
+    {
+      "label": "embedded internship",
+      "when": "2028",
+      "detail": "GPA bar 3.0 — held 3.56"
+    }
+  ]
+}

@@ -1,179 +1,141 @@
-# PHỤ LỤC — 4 thứ nâng cấp (làm sau khi đã dán README)
+<!--
+  PROFILE README — dán vào repo: geminiprocv-tech/geminiprocv-tech (repo PUBLIC, tên trùng username)
+  Banner: mặc định dùng assets/banner.svg (nền tối, xanh nhạt làm điểm nhấn — hiển thị tốt ở cả dark & light mode)
+          muốn nền sáng hoàn toàn thì đổi thành assets/banner-lite.svg
+  Chỗ nào có <!-- EDIT --> là phải sửa theo dữ liệu thật.
+-->
 
-Làm đúng thứ tự này. Mỗi bước 5–15 phút.
+<p align="center">
+  <img src="assets/banner.svg" alt="geminiprocv-tech — Embedded Systems, IoT, Edge AI" width="100%"/>
+</p>
 
----
-
-## 1. Hoạt cảnh 3 mascot (thay cho status panel cũ)
-
-**File:** `assets/crew-walk.gif` (động, 321 KB) · `assets/crew-walk.png` (ảnh tĩnh dự phòng)
-**Nguồn:** `assets/mascots/m1.png` `m2.png` `m3.png` — cả 3 đã vẽ lại theo cùng chất 3D bóng (glossy toy), tách nền trắng, hạ kích thước cho gọn repo
-
-Ba con đứng sát nhau, **nhấp nhô theo nhịp bước lệch pha**, đi qua lại và **tự lật mặt** khi quay đầu.
-
-### Vì sao GIF mà không phải SVG
-SVG + SMIL có thể bị proxy ảnh của GitHub bỏ qua phần animation → bạn sẽ thấy một khung đứng yên.
-**GIF thì luôn chạy**, và 3 mascot là ảnh raster sẵn nên không mất gì về chất lượng.
-
-### Hiệu ứng đang bật
-| Hiệu ứng | Mô tả | Tắt bằng |
-|---|---|---|
-| **travel** | đi qua lại, dừng 1 nhịp mỗi đầu, tự lật mặt | `AMP = 0` |
-| **bob** | nhấp nhô theo nhịp bước, 3 con lệch pha | `BOB = 0` |
-| **squash** | nén khi chạm đất, giãn khi lên đỉnh | `SQUASH = 0` |
-| **sway** | nghiêng nhẹ qua lại | `SWAY = 0` |
-| **glow** | quầng sáng sau lưng, đập theo nhịp | `GLOW_ON = False` |
-| **dust** | hạt sáng bay lên, lặp đúng 1 chu kỳ | `DUST_ON = False` |
-| **shadow** | bóng dưới chân, to nhỏ theo độ cao | (luôn bật) |
-
-### Dựng lại / chỉnh
-```bash
-pip install pillow cairosvg
-python3 tools/make-crew-gif.py
+```console
+geminiprocv@edge-node:~$ ./boot.sh
+[    0.000] Booting geminiprocv-tech v1.0 ...................... OK
+[    0.214] Mounting /skills ....................... 8 modules
+[    0.402] Probing I2C bus 0 ......................... 3 devices found
+[    0.611] Calibrating sensors ......................... stable
+[    0.800] Loading model (int8, on-device) ............. 24 fps
+[    1.000] Target profile: EMBEDDED · IoT · EDGE AI
+[    1.002] Status: online — building, learning, shipping
 ```
-Hằng số ở đầu script:
 
-| Muốn đổi | Sửa |
+<h3 align="center">I build small machines that sense the world, think locally, and talk over the wire.</h3>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/FOCUS-firmware%20%C2%B7%20edge%20ai%20%C2%B7%20iot%20infra-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="focus"/>
+  <img src="https://img.shields.io/badge/BASE-da%20nang%2C%20vn-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="location"/>
+  <img src="https://img.shields.io/badge/OPEN%20TO-internship-8fd6ff?style=for-the-badge&labelColor=0b2130" alt="open to"/>
+</p>
+
+<p align="center">
+  <img src="assets/divider.svg" alt="" width="100%"/>
+</p>
+
+## 🛰 Device status
+
+| FIELD | VALUE |
 |---|---|
-| Con nào trông nhỏ quá | `HEIGHTS = [96, 88, 66]` |
-| Đứng sát / xa nhau | `CX = [315, 390, 470]` |
-| Đi xa / gần | `AMP = 172` |
-| File nhẹ hơn | giảm `COLORS = 48` (24 → nhẹ hơn ~30%) hoặc giảm `N = 32` |
-| Nhanh / chậm | `FPS = 11`, `STEP_HZ = 2.1` |
-| Nhấp nhô nhiều / ít | `BOB = 6` |
-| Nghiêng nhiều / ít | `SWAY = 2.4` |
-| Co giãn nhiều / ít | `SQUASH = 0.055` |
-| Chữ trên khung | `LABEL_L`, `LABEL_R`, `CAPTION` |
+| `DEVICE_ID` | **geminiprocv-tech** |
+| `ROLE` | Computer Engineering student |
+| `LOCATION` | Hoi An / Da Nang, Vietnam |
+| `PRIMARY_BUS` | Embedded firmware · IoT systems · Edge AI |
+| `CURRENT_MISSION` | Building an end-to-end sensor → edge AI → cloud system |
+| `UPTIME` | learning since 2024 <!-- EDIT --> |
+| `STATUS` | 🟢 online — open to internship & junior roles |
 
-### Vì sao file GIF nặng hơn bản không hiệu ứng
-Quầng sáng là **gradient** → GIF (bảng màu 256) phải chia dải, nén kém. Đã xử lý bằng cách vẽ quầng
-thành **4 dải phẳng** thay vì gradient mượt: 592 KB → 321 KB mà mắt gần như không phân biệt được.
-Nếu vẫn thấy nặng, đặt `GLOW_ON = False` là về ~286 KB.
+## ⚡ Bus topology — what I work with
 
-### Đổi mascot khác
-1. Thay `assets/mascots/m1.png`..`m3.png` bằng ảnh nền trong suốt
-2. Chạy lại script
-3. Nếu nền ảnh không trong suốt: tách nền bằng https://www.remove.bg, hoặc nhờ t xử lý
+**MCU / boards**
+<br/>
+<img src="https://img.shields.io/badge/STM32-8fd6ff?style=flat-square&labelColor=0b2130" alt="stm32"/>
+<img src="https://img.shields.io/badge/ESP32-8fd6ff?style=flat-square&labelColor=0b2130" alt="esp32"/>
+<img src="https://img.shields.io/badge/Raspberry%20Pi-8fd6ff?style=flat-square&labelColor=0b2130" alt="raspberry pi"/>
+<img src="https://img.shields.io/badge/Jetson%20Nano-8fd6ff?style=flat-square&labelColor=0b2130" alt="jetson"/>
+<img src="https://img.shields.io/badge/FPGA-8fd6ff?style=flat-square&labelColor=0b2130" alt="fpga"/>
 
-### Đổi tên hiển thị
-Khung hiện **không ghi tên từng con** (vì t không chắc thứ tự bạn muốn gán). Muốn ghi tên thì nói
-thứ tự, hoặc tự sửa `LABEL_L` thành `CLAUDE · CHATGPT · GEMINI`.
+**Languages**
+<br/>
+<img src="https://img.shields.io/badge/C-8fd6ff?style=flat-square&labelColor=0b2130" alt="c"/>
+<img src="https://img.shields.io/badge/C%2B%2B-8fd6ff?style=flat-square&labelColor=0b2130" alt="cpp"/>
+<img src="https://img.shields.io/badge/Python-8fd6ff?style=flat-square&labelColor=0b2130" alt="python"/>
+<img src="https://img.shields.io/badge/Java-8fd6ff?style=flat-square&labelColor=0b2130" alt="java"/>
+<img src="https://img.shields.io/badge/Bash-8fd6ff?style=flat-square&labelColor=0b2130" alt="bash"/>
+<img src="https://img.shields.io/badge/SystemVerilog-8fd6ff?style=flat-square&labelColor=0b2130" alt="sv"/>
 
----
+**Protocols**
+<br/>
+<img src="https://img.shields.io/badge/I2C-8fd6ff?style=flat-square&labelColor=0b2130" alt="i2c"/>
+<img src="https://img.shields.io/badge/SPI-8fd6ff?style=flat-square&labelColor=0b2130" alt="spi"/>
+<img src="https://img.shields.io/badge/UART-8fd6ff?style=flat-square&labelColor=0b2130" alt="uart"/>
+<img src="https://img.shields.io/badge/MQTT-8fd6ff?style=flat-square&labelColor=0b2130" alt="mqtt"/>
+<img src="https://img.shields.io/badge/BLE-8fd6ff?style=flat-square&labelColor=0b2130" alt="ble"/>
+<img src="https://img.shields.io/badge/CAN-8fd6ff?style=flat-square&labelColor=0b2130" alt="can"/>
 
-## 1b. (tuỳ chọn) Status panel — ảnh thật, không phải widget bên thứ ba
+**Infra & tools**
+<br/>
+<img src="https://img.shields.io/badge/Linux-8fd6ff?style=flat-square&labelColor=0b2130" alt="linux"/>
+<img src="https://img.shields.io/badge/Docker-8fd6ff?style=flat-square&labelColor=0b2130" alt="docker"/>
+<img src="https://img.shields.io/badge/GitHub%20Actions-8fd6ff?style=flat-square&labelColor=0b2130" alt="actions"/>
+<img src="https://img.shields.io/badge/PostgreSQL-8fd6ff?style=flat-square&labelColor=0b2130" alt="postgres"/>
+<img src="https://img.shields.io/badge/PyTorch-8fd6ff?style=flat-square&labelColor=0b2130" alt="pytorch"/>
+<img src="https://img.shields.io/badge/OpenCV-8fd6ff?style=flat-square&labelColor=0b2130" alt="opencv"/>
+<img src="https://img.shields.io/badge/Git-8fd6ff?style=flat-square&labelColor=0b2130" alt="git"/>
 
-**Vì sao đáng làm:** mọi widget (`github-readme-stats`, `streak-stats`, `komarev`…) đều là **dịch vụ của người khác**.
-Chúng chết, bị rate-limit, hoặc hiện "Something went wrong" đúng lúc recruiter mở profile. Panel của bạn là **file trong repo → luôn hiện**.
+<p align="center">
+  <img src="assets/divider.svg" alt="" width="100%"/>
+</p>
 
-### Dùng ngay
-1. Upload `assets/status-panel.png` lên repo profile
-2. Trong README, chỗ cần chèn:
-   ```html
-   <p align="center">
-     <img src="assets/status-panel.png" alt="Student status: year 2 · semester 1 · 39 credits · GPA 3.56 · fw_projects = 0" width="100%"/>
-   </p>
-   ```
-3. Thẻ `alt` dài **không phải để cho đẹp** — nó là nội dung profile khi ảnh không tải được, và là thứ Google đọc.
+## 📡 Active nodes — projects
 
-### Sửa nội dung panel
-Mở `assets/status-panel.svg` bằng text editor (nó là XML, không phải ảnh nhị phân):
-- Dòng chữ → sửa trong thẻ `<text>`
-- Số liệu → `YEAR / SEMESTER`, `CREDITS GRADED`, `GPA`, `22 A / 17 B`
-- Sprint → `CURRENT SPRINT`, `EXIT CRITERIA`
-- Thanh GPA: `width="121"` trong `<rect x="170" y="158" ...>` = (GPA/4)×136. GPA 3.56 → 121.
-- Thanh tuần: `width="20"` trong `<rect x="360" y="132" ...>` = (tuần/13)×288
+> Mỗi dòng = một thiết bị trong mạng. Thay bằng dự án thật (xóa dòng mẫu khi đã có).
+> **Quy tắc kể:** nêu *số đo được* — dòng điện sleep, FPS, độ trễ, kích thước model, uptime.
 
-### Render lại ra PNG
-```bash
-pip install cairosvg
-python3 -c "import cairosvg; cairosvg.svg2png(url='assets/status-panel.svg', write_to='assets/status-panel.png', output_width=1000)"
-```
-Không cài được? Mở SVG bằng trình duyệt → chụp màn hình → hoặc dùng https://cloudconvert.com/svg-to-png.
+| NODE | STACK | TELEMETRY | STATUS |
+|---|---|:--:|:--:|
+| [**sensor-node**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `C` `STM32` `I2C` `MQTT` | sleep **42 µA**, battery **9 days** | 🟢 done |
+| [**edge-vision**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Python` `YOLOv8n` `TensorRT` | **24 FPS** after INT8, model **6.1 MB** | 🟡 wip |
+| [**iot-dashboard**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Java` `Spring` `PostgreSQL` | p95 **85 ms**, **1.2 M** rows/day | 🟡 wip |
+| [**node-infra**](https://github.com/geminiprocv-tech) <!-- EDIT --> | `Docker` `CI/CD` `Prometheus` | deploy **1 command**, pipeline **92 s** | 🔵 planned |
 
-> **Quy tắc số một:** nếu số trong panel khác số trong transcript, bạn đã tự tạo ra một lời nói dối.
-> Sửa transcript thì sửa panel. Không có ngoại lệ.
+<p align="center">
+  <img src="assets/divider.svg" alt="" width="100%"/>
+</p>
 
----
+## 📈 Telemetry
 
-## 2. Social preview — thứ hiện ra khi ai đó share profile bạn
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=geminiprocv-tech&show_icons=true&hide_border=true&bg_color=0b2130&title_color=8fd6ff&text_color=a8c6d4&icon_color=8fd6ff&include_all_commits=true&count_private=true" alt="GitHub stats"/>
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=geminiprocv-tech&layout=compact&hide_border=true&bg_color=0b2130&title_color=8fd6ff&text_color=a8c6d4&langs_count=8" alt="Top languages"/>
+</p>
 
-Khi bạn gửi link `github.com/geminiprocv-tech` qua Zalo/LinkedIn/Discord, nó hiện một **thẻ ảnh**. Mặc định là avatar ảnh vuông nhỏ xíu.
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=geminiprocv-tech&bg_color=0b2130&color=8fd6ff&line=4fb8e8&point=cdeeff&area=true&hide_border=true" alt="activity graph" width="100%"/>
+</p>
 
-Đổi thành ảnh 1280×640:
-1. Vào repo profile → **Settings** (tab của repo, không phải settings tài khoản)
-2. Kéo xuống **Social preview** → **Edit** → upload `assets/social-preview.png`
-3. Xong. Từ giờ mọi link share đều hiện ảnh này.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/geminiprocv-tech/geminiprocv-tech/output/github-snake-dark.svg" alt="contribution snake" width="100%"/>
+</p>
 
-Ảnh đã có sẵn trong `assets/social-preview.png` (1280×640, đúng chuẩn). Muốn sửa: `assets/social-preview.svg`.
+<p align="center">
+  <img src="assets/divider.svg" alt="" width="100%"/>
+</p>
 
----
+## 🔌 Pinout — get in touch
 
-## 3. NOW tự cập nhật bằng GitHub Actions
+| PIN | SIGNAL |
+|:--:|---|
+| `TX` | [![LinkedIn](https://img.shields.io/badge/LinkedIn-8fd6ff?style=flat-square&labelColor=0b2130)](https://www.linkedin.com/in/YOUR-HANDLE) <!-- EDIT --> |
+| `RX` | [![Email](https://img.shields.io/badge/Email-8fd6ff?style=flat-square&labelColor=0b2130)](mailto:YOUR@EMAIL.COM) <!-- EDIT --> |
+| `GND` | Da Nang, Vietnam (GMT+7) |
+| `3V3` | Open to **internship** & **junior embedded / edge AI** roles |
 
-**Vì sao đáng làm:** đây là thứ duy nhất trên profile chứng minh **bạn còn đang chạy**, không phải ảnh chụp năm ngoái. Và nó là **Tầng 4 (CI/CD) trong lộ trình học** — bạn đang tập nó thật, không phải học trên slide.
+<br/>
 
-### Cách bật (3 phút)
-```
-repo profile/
-├── now.json                              ← nguồn sự thật duy nhất
-├── README.md                             ← có <!-- NOW:START --> ... <!-- NOW:END -->
-└── .github/workflows/update-readme.yml   ← máy ghi vào giữa 2 marker
-```
-1. Tạo thư mục `.github/workflows/` trong repo profile
-2. Upload `now.json` và `update-readme.yml` (giữ đúng đường dẫn)
-3. Đảm bảo README có 2 marker `<!-- NOW:START -->` và `<!-- NOW:END -->`
-4. Vào **Settings → Actions → General → Workflow permissions** → chọn **Read and write permissions** → Save
-5. Tab **Actions** → chọn workflow → **Run workflow** (chạy tay lần đầu để chắc nó hoạt động)
-6. Sau đó: chỉ sửa `now.json`, mọi thứ tự chạy. Cũng tự chạy mỗi thứ Hai 08:00 giờ Đà Nẵng.
+<p align="center">
+  <i>"If it doesn't have a debug LED and a log line, it doesn't exist."</i>
+</p>
 
-### Mỗi tuần bạn chỉ sửa 3 chỗ trong `now.json`
-```json
-"sprint": { "name": "...", "week": 2, "of": 13 },
-"metrics": { ... },
-"next": [ ... ]
-```
-
-**Đây là điểm khác biệt thật:** 99% sinh viên có profile tĩnh. Bạn có profile có **pipeline**.
-
----
-
-## 4. CV — PDF 1 trang, cùng bộ màu
-
-- `cv/cv.pdf` — bản in được ngay, 1 trang A4
-- `cv/cv.html` — bản nguồn. Sửa xong render lại bằng:
-  ```bash
-  pip install weasyprint
-  python3 -c "from weasyprint import HTML; HTML(filename='cv/cv.html').write_pdf('cv/cv.pdf')"
-  ```
-- Hoặc mở `cv.html` bằng Chrome → Ctrl+P → *Save as PDF* → Margins: **None** → **bỏ** "Headers and footers"
-
-### 7 chỗ phải sửa trước khi gửi
-1. `YOUR FULL NAME`
-2. `UNIVERSITY NAME` + `Expected 2029`
-3. Email
-4. LinkedIn handle
-5. GPA / credits / số A-B (nếu đã qua học kỳ mới)
-6. Tên project (nếu đổi)
-7. Ngày cập nhật ở footer
-
-Sau khi sửa: upload `cv.pdf` lên repo profile (cùng chỗ README) để badge CV trong README trỏ tới đúng file.
-
-> **Điểm mạnh của CV này:** nó ghi *"No finished firmware project yet, and this CV says so."*
-> Nhiều người sợ dòng đó. Nhưng người phỏng vấn đọc 200 CV một tuần — cái họ nhớ là
-> **người không thổi phồng**. Và khi bạn có project thật, độ tin của cả CV tăng gấp đôi.
-
----
-
-## Thứ tự làm
-
-| | Bước | Thời gian | Tác động |
-|:--:|---|:--:|---|
-| 1 | Dán `README-v4-NAM2.md` + upload `status-panel.png` | 10 phút | ⭐⭐⭐⭐⭐ |
-| 2 | Upload `cv.pdf` | 2 phút | ⭐⭐⭐⭐ |
-| 3 | Bật Social preview | 3 phút | ⭐⭐⭐⭐ |
-| 4 | Bật Action + `now.json` | 10 phút | ⭐⭐⭐⭐⭐ |
-| 5 | Bật `NOW.md` làm file công khai | 1 phút | ⭐⭐⭐ |
-| 6 | Sửa `now.json` mỗi tuần | 2 phút/tuần | ⭐⭐⭐⭐⭐ (dài hạn) |
-
-Bước 6 là bước quan trọng nhất và là bước duy nhất phải làm **mãi mãi**. Bốn bước đầu chỉ là dựng sân.
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=geminiprocv-tech&label=node%20visits&color=8fd6ff&style=flat-square" alt="profile views"/>
+</p>
